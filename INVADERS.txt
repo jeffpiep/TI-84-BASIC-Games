@@ -1,0 +1,50 @@
+0→S:1→W
+Lbl Q
+ClrHome
+14→X:Output(10,X,"^")
+0→D:0→M:10→Y:1→A:1→B
+{1,1,1,1,1}→L₁:0→P
+3+remainder(W-1,6)→R
+Output(1,4,"LEVEL: ")
+Output(1,11,W)
+Output(1,15,"SCORE: ")
+Output(1,22,S)
+While D=0
+If P=3:Then:R→T
+For(I,1,5):If L₁(I)=1
+Then:A+I*5-4→C
+Output(T,C," ")
+If C=1:Then:1→B:R+1→R:End
+If C=26:Then:­1→B:R+1→R
+End:End:End:End
+P+1→P:If P=4:Then
+A+B→A:1→P:End
+For(I,1,5):If L₁(I)=1
+Then:A+I*5-4→C
+If Y=R and N=C and M=1:Then
+Output(R,C," "):0→M
+S+4*W→S:0→L₁(I)
+Output(1,22,S)
+Else:If remainder(abs(A),2)=1:Then
+Output(R,C,"W"):Else
+Output(R,C,"M"):End
+End:End:End
+getKey→K
+If K>0:Then
+Output(10,X," ")
+If K=24:Then
+X-1+(X=1)→X
+Else:If K=26
+X+1-(X=26)→X:End
+Output(10,X,"^")
+If K=21 and M=0:Then
+1→M:X→N:10→Y:End:End
+If M=1:Then
+If Y=10:Then
+Output(Y,N,"^"):Else
+Output(Y,N," "):End
+Y-1→Y
+If Y=1:Then:0→M:Else
+Output(Y,N,"."):End:End
+If max(L₁)=0 or R=10:1→D
+End:W+1→W:Goto Q

@@ -1,0 +1,48 @@
+ClrHome
+0→S
+1→M
+1→N
+13→X
+3→Y
+0→U
+1→V
+14→P
+P→Q
+0→D
+While D=0
+Output(1,9,"SCORE: ")
+Output(1,16,S)
+Output(10,P-2,"-----  "
+If P>Q
+Output(10,Q-2,"  ")
+Output(Y,X,"*")
+Output(N,M," ")
+If Y=10
+Then
+If abs(X-P)≤2
+Then
+­V→V
+round((X-P)/2,0)→U
+S+5→S
+Else
+1→D
+End
+Else
+If Y=1
+­V→V
+End
+If (X=1) or (X=26)
+­U→U
+X→M
+Y→N
+X+U→X
+Y+V→Y
+P→Q
+getKey→K
+If K=24 or K=26
+P+2*(K-25)→P
+If P<3
+3→P
+If P>24
+24→P
+End

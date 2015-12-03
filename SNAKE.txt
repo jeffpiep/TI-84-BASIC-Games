@@ -1,0 +1,46 @@
+ClrHome
+{5,5→L₅
+{10,11→L₆
+11→X
+5→Y
+1→U
+0→V
+0→D:2→C
+4→J
+15→L
+For(I,1,dim(L₅))
+Output(L₅(I),L₆(I),"+")
+End
+While D=0
+getKey→K
+If K≠0:Then
+If K=24:Then
+­1→U:0→V:End
+If K=25:Then
+­1→V:0→U:End
+If K=26:Then
+1→U:0→V:End
+If K=34:Then
+1→V:0→U:End
+End
+Output(1,1,C)
+Output(Y,X,"+")
+X+U→X
+Y+V→Y
+Output(Y,X,"O")
+Output(J,L,"π")
+If max((Y=L₅)+(X=L₆))=2:Then
+1→D
+Else
+If Y=J and X=L:Then
+randInt(2,22)→L
+randInt(2,9)→J
+C+1→C
+Else
+Output(L₅(1),L₆(1)," ")
+seq(L₅(I),I,2,dim(L₅))→L₅
+seq(L₆(I),I,2,dim(L₆))→L₆
+End:End
+Y→L₅(dim(L₅)+1)
+X→L₆(dim(L₆)+1)
+End

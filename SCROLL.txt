@@ -1,0 +1,51 @@
+ClrHome
+Disp ""
+Disp "        READY, SET,"
+Disp "             3"
+Disp "             2"
+Disp "             1"
+Disp ""
+For(X,1,500):End
+Disp "            GO!"
+Disp "":Disp "":Disp ""
+0→D:0→C:13→X:8→W
+int((28-W-1)/2)→R
+{R,R,R,R}→L₁
+0→S:8→M:0→N
+While D=0
+Output(10,R,"]")
+Output(10,R+W,"[")
+Disp "":Output(2,1,C)
+Output(6,X,"=V=")
+Output(5,X,"O+O")
+Output(4,X," 0 ")
+Output(3,X,"O^O")
+Output(2,X,"   ")
+If X≥L₁(1) and X≤L₁(1)+W-2:Then
+N+1→N:If N=M:Then
+If R=9:Then
+randInt(­1,1)→S
+Else
+round((R-9)/W,0)*randInt(­1,0)→S
+End
+0→N
+End
+R+S→R
+seq(L₁(I),I,2,4)→L₁
+R→L₁(4)
+C+1→C
+getKey→K
+If K=24:Then
+Output(3,X+2," ")
+Output(4,X+2," ")
+Output(5,X+2," ")
+Output(6,X+2," ")
+X-1+(X=1)→X:Else:If K=26
+Then
+Output(3,X," ")
+Output(4,X," ")
+Output(5,X," ")
+Output(6,X," ")
+X+1-(X=24)→X:End:End
+Else:1→D:End
+End
